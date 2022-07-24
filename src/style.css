@@ -1,0 +1,64 @@
+body {
+  font-family: "Oswald", sans-serif;
+}
+
+.container {
+  border: 1px solid #dadde1;
+  margin: 15px auto;
+  padding: 10px 25px;
+  border-radius: 10px;
+  max-width: 900px;
+  min-height: 550px;
+  background-image: url(https://images.pexels.com/photos/1227513/pexels-photo-1227513.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+  background-color: gray;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: rgb(255, 255, 255);
+  text-shadow: 1px 1px 2px black;
+}
+
+form {
+  margin: 20px auto;
+}
+
+h1 {
+  font-weight: 800;
+}
+ul {
+  padding: 0;
+  font-size: 22px;
+}
+
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.temperature {
+  font-size: 64px;
+  font-weight: 400;
+}
+
+.units {
+  position: relative;
+  top: -34px;
+}
+.author {
+  text-align: center;
+  margin: 15px;
+}
+.next-days {
+  background-color: rgb(169, 169, 169, 0.6);
+  text-align: center;
+  border: 2px solid;
+  border-color: rgb(255, 255, 255);
+  border-radius: 20px;
+  margin: 1vw;
+  padding: 15px;
+}
+.forecast {
+  font-size: 45px;
+  margin: 15px;
+}
