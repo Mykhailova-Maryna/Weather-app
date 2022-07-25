@@ -60,20 +60,18 @@ function cityTemperature(event) {
 function showWeather(response) {
   console.log(response.data);
   let city = document.querySelector("#city");
-  let temp = document.querySelector("#temp");
-  let desc = document.querySelector("#description");
-  let hum = document.querySelector("#humidity");
-  let wi = document.querySelector("#wind");
-  let cityName = response.data.name;
-  let temperature = Math.round(response.data.main.temp);
-  let description = response.data.weather[0].main;
-  let humidity = response.data.main.humidity;
-  let wind = Math.round(response.data.wind.speed);
-  city.innerHTML = `${cityName}`;
-  temp.innerHTML = `${temperature}`;
-  desc.innerHTML = `${description}`;
-  hum.innerHTML = `Humidity: ${humidity}%`;
-  wi.innerHTML = `Wind: ${wind} km/h`;
+  let temperature = document.querySelector("#temp");
+  let description = document.querySelector("#description");
+  let humidity = document.querySelector("#humidity");
+  let wind = document.querySelector("#wind");
+  let icon = document.querySelector("#icon");
+
+  city.innerHTML = response.data.name;
+  temperature.innerHTML = Math.round(response.data.main.temp);
+  description.innerHTML = response.data.weather[0].description;
+  humidity.innerHTML = `Humidity: ${response.data.main.humidity}%`;
+  wind.innerHTML = `Wind: ${Math.round(response.data.wind.speed)} km/h`;
+  icon.setAttribute("src", `icons/${response.data.weather[0].icon}.png`);
 }
 
 function showPosition(position) {
