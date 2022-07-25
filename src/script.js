@@ -66,6 +66,8 @@ function showWeather(response) {
   let wind = document.querySelector("#wind");
   let icon = document.querySelector("#icon");
 
+  celsiusTemperature = response.data.main.temp;
+
   city.innerHTML = response.data.name;
   temperature.innerHTML = Math.round(response.data.main.temp);
   description.innerHTML = response.data.weather[0].description;
@@ -84,3 +86,29 @@ function showPosition(position) {
 function getCurrentPosition() {
   navigator.geolocation.getCurrentPosition(showPosition);
 }
+
+//Engine to convert temperature to °F and backward
+function showFahrenheitTemperature(event) {
+  event.preventDefault();
+  let temperature = document.querySelector("#temp");
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+  let fahrenheitTemp = (celsiusTemperature * 9) / 5 + 32;
+  temperature.innerHTML = Math.round(fahrenheitTemp);
+}
+
+function showCelsiusTemperature(event) {
+  event.preventDefault();
+  fahrenheitLink.classList.remove("active");
+  celsiusLink.classList.add("active");
+  let temperature = document.querySelector("#temp");
+  temperature.innerHTML = Math.round(celsiusTemperature);
+}
+
+let celsiusTemperature = null;
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", showFahrenheitTemperature);
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", showCelsiusTemperature);
