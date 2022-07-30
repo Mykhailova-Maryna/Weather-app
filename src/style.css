@@ -25,19 +25,23 @@ form {
 h1 {
   font-weight: 800;
 }
+
 ul {
   padding: 0;
   font-size: 22px;
 }
 
 .today {
-  vertical-align: baseline;
+  vertical-align: middle;
 }
 
 img {
   position: relative;
-  margin: auto;
   vertical-align: baseline;
+}
+
+.forecast-icon {
+  margin: 15px;
 }
 
 li {
