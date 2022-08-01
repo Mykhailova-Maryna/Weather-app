@@ -78,6 +78,8 @@ function showWeather(response) {
   icon.setAttribute("src", `icons/${response.data.weather[0].icon}.svg`);
 
   getForecast(response.data.coord);
+  fahrenheitLink.classList.remove("active");
+  celsiusLink.classList.add("active");
 }
 
 function showPosition(position) {
